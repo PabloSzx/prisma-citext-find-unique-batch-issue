@@ -1,0 +1,29 @@
+{
+  "name": "prisma-citext-find-unique-batch-issue",
+  "version": "1.0.0",
+  "private": true,
+  "license": "MIT",
+  "author": "PabloSzx <pablosaez1995@gmail.com>",
+  "scripts": {
+    "migrate": "prisma migrate dev",
+    "prepare": "prisma generate",
+    "reset": "prisma migrate reset --force",
+    "start": "pnpm reset && bob-tsm src/index.ts",
+    "stop": "docker-compose down -v --rmi all"
+  },
+  "dependencies": {
+    "@prisma/client": "^3.14.0",
+    "@types/node": "^17.0.35",
+    "bob-tsm": "^1.0.0",
+    "esbuild": "^0.14.41",
+    "prisma": "^3.14.0",
+    "typescript": "^4.7.2"
+  },
+  "engines": {
+    "node": ">=16.15.0",
+    "pnpm": ">=7.1.5"
+  },
+  "prisma": {
+    "seed": "bob-tsm prisma/seed.ts"
+  }
+}
